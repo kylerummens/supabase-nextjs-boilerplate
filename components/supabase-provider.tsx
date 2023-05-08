@@ -7,30 +7,30 @@ import { Database } from "@/types/database.types";
 import { createClient } from "@/utils/client/supabase-client";
 
 type SupabaseContext = {
-    supabase: SupabaseClient<Database>;
+  supabase: SupabaseClient<Database>;
 };
 
 const Context = createContext<SupabaseContext | undefined>(undefined);
 
 export default function SupabaseProvider({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    const [supabase] = useState(() => createClient());
+  const [supabase] = useState(() => createClient());
 
-    return (
-        <Context.Provider value={{ supabase }}>
-            <>{children}</>
-        </Context.Provider>
-    );
+  return (
+    <Context.Provider value={{ supabase }}>
+      <>{children}</>
+    </Context.Provider>
+  );
 }
 
 export const useSupabase = () => {
-    let context = useContext(Context);
-    if (context === undefined) {
-        throw new Error("useSupabase must be used inside SupabaseProvider");
-    } else {
-        return context;
-    }
+  let context = useContext(Context);
+  if (context === undefined) {
+    throw new Error("useSupabase must be used inside SupabaseProvider");
+  } else {
+    return context;
+  }
 };

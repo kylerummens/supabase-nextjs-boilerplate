@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 @layer utilities {
-    .label {
-        @apply text-gray-700 dark:text-gray-200;
-    }
+  .label {
+    @apply text-gray-700 dark:text-gray-200;
+  }
 
-    .secondary-label {
-        @apply text-gray-500 dark:text-gray-400;
-    }
+  .secondary-label {
+    @apply text-gray-500 dark:text-gray-400;
+  }
 
-    .tertiary-label {
-        @apply text-gray-300 dark:text-gray-600;
-    }
+  .tertiary-label {
+    @apply text-gray-300 dark:text-gray-600;
+  }
 }
 
 body {
-    @apply bg-white dark:bg-gray-1000;
+  @apply bg-white dark:bg-gray-1000;
 }
 
 html,
 body {
-    @apply label font-sans;
+  @apply label font-sans;
 }
